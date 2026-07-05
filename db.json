@@ -1,0 +1,38 @@
+{
+  "categories": [
+    { "id": "1", "name": "Пиццы" },
+    { "id": "2", "name": "Напитки" },
+    { "id": "3", "name": "Десерты" }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Маргарита",
+      "price": 350,
+      "image": "/pizza-placeholder.jpg",
+      "category": "1"
+    },
+    {
+      "id": "2",
+      "name": "Пепперони",
+      "price": 420,
+      "image": "/pizza-placeholder.jpg",
+      "category": "1"
+    },
+    {
+      "id": "3",
+      "name": "Кока-кола",
+      "price": 120,
+      "image": "/pizza-placeholder.jpg",
+      "category": "2"
+    },
+    {
+      "id": "4",
+      "name": "Тирамису",
+      "price": 280,
+      "image": "/pizza-placeholder.jpg",
+      "category": "3"
+    }
+  ],
+  "orders": []
+}
