@@ -16,7 +16,7 @@ export default function Header() {
           </div>
         </div>
 
-        <button className="flex items-center gap-2 p-1 bg-orange-500 hover:bg-orange-600 text-white rounded-full">
+        <button className="flex items-center gap-2 px-2 py-1 bg-orange-500 hover:bg-orange-600 text-white rounded-full">
           <span className="font-semibold">0 ₽</span>{" "}
           <span className="flex items-center gap-2 bg-white/20 rounded-full px-2 py-2">
             <ShoppingCart size={16} /> 0

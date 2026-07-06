@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getCategories, getProducts } from "@/lib/api";
 import { Category, Product } from "@/types";
 import CategoryFilter from "@/components/CategoryFilter";
+import ProductList from "@/components/ProductList";
 
 export default function Home() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -28,10 +29,7 @@ export default function Home() {
         selectedCategory={selectedCategory}
         onSelect={setSelectedCategory}
       />
-
-      <pre className="bg-zinc-100 p-4 rounded text-xs overflow-auto">
-        {JSON.stringify(filteredProducts, null, 2)}
-      </pre>
+      <ProductList products={filteredProducts} />
     </main>
   );
 }
