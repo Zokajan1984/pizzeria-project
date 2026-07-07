@@ -2,6 +2,7 @@
 
 import { ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
+import Link from "next/link";
 
 export default function Header() {
   const items = useCartStore((state) => state.items);
@@ -30,21 +31,21 @@ export default function Header() {
             </p>
           </div>
         </div>
-
-        <button
+        <Link
+          href="/cart"
           className="flex items-center gap-2 bg-orange-500
-                     hover:bg-orange-600 text-white rounded-full
-                     pl-4 pr-3 py-2 cursor-pointer"
+             hover:bg-orange-600 text-white rounded-full
+             pl-4 pr-3 py-2 cursor-pointer"
         >
           <span className="font-semibold">{totalPrice} ₽</span>
           <span
             className="flex items-center gap-1 bg-white/20
-                       rounded-full px-2 py-1"
+               rounded-full px-2 py-1"
           >
             <ShoppingCart size={16} />
             {totalCount}
           </span>
-        </button>
+        </Link>
       </div>
     </header>
   );
