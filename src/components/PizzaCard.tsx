@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Product } from "@/types";
+import { useCartStore } from "@/store/cartStore";
 
 interface PizzaCardProps {
   product: Product;
@@ -14,8 +15,9 @@ const SIZES = ["26 см", "30 см", "40 см"];
 export default function PizzaCard({ product }: PizzaCardProps) {
   const [dough, setDough] = useState(DOUGH_TYPES[0]);
   const [size, setSize] = useState(SIZES[0]);
+  const addItem = useCartStore((state) => state.addItem);
   return (
-    <div className="border rounded-xl p-4 flex-col gap-3 bg-white">
+    <div className="border rounded-xl p-4 flex flex-col gap-3 bg-white">
       <div className="bg-zinc-100 h-36 rounded-full mx-auto w-36 flex items-center justify-center">
         🍕
       </div>
@@ -47,7 +49,11 @@ export default function PizzaCard({ product }: PizzaCardProps) {
 
       <div className="flex items-center justify-between mt-1">
         <span className="font-semibold">от {product.price} ₽</span>
-        <button className="flex items-center gap-1 border border-orange-500 text-orange-500 rounded-full px-3 py-1.5 text-sm font-medium cursor-pointer hover:bg-orange-50">
+
+        <button
+          onClick={() => addItem(product)}
+          className="flex items-center gap-1 border border-orange-500 text-orange-500 rounded-full px-3 py-1.5 text-sm font-medium cursor-pointer hover:bg-orange-50"
+        >
           <Plus size={14} />
           Добавить
         </button>

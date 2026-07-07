@@ -11,3 +11,8 @@ export interface Product {
   category: string;
   description?: string;
 }
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
