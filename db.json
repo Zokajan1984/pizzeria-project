@@ -2,8 +2,11 @@
   "categories": [
     { "id": "1", "name": "Пиццы" },
     { "id": "2", "name": "Напитки" },
-    { "id": "3", "name": "Десерты" }
+    { "id": "3", "name": "Десерты" },
+    { "id": "4", "name": "Выпечки" },
+    { "id": "5", "name": "Мороженное" }
   ],
+
   "products": [
     {
       "id": "1",
@@ -19,6 +22,7 @@
       "image": "/pizza-placeholder.jpg",
       "category": "1"
     },
+
     {
       "id": "3",
       "name": "Кока-кола",
@@ -26,12 +30,45 @@
       "image": "/pizza-placeholder.jpg",
       "category": "2"
     },
+
+    {
+      "id": "5",
+      "name": "Салам-кола",
+      "price": 100,
+      "image": "/pizza-placeholder.jpg",
+      "category": "2"
+    },
+
+    {
+      "id": "7",
+      "name": "Фанта",
+      "price": 160,
+      "image": "/pizza-placeholder.jpg",
+      "category": "2"
+    },
+
     {
       "id": "4",
       "name": "Тирамису",
       "price": 280,
       "image": "/pizza-placeholder.jpg",
       "category": "3"
+    },
+
+    {
+      "id": "6",
+      "name": "Самса",
+      "price": 170,
+      "image": "/pizza-placeholder.jpg",
+      "category": "4"
+    },
+
+    {
+      "id": "8",
+      "name": "Пломбир",
+      "price": 170,
+      "image": "/pizza-placeholder.jpg",
+      "category": "5"
     }
   ],
   "orders": []
