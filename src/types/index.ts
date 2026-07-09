@@ -16,3 +16,11 @@ export interface CartItem {
   product: Product;
   quantity: number;
 }
+
+export interface OrderData {
+  name: string;
+  phone: string;
+  address: string;
+  items: CartItem[];
+  totalPrice: number;
+}

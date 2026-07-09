@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Category, Product } from "@/types";
+import { Category, Product, OrderData } from "@/types";
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -26,5 +26,10 @@ export async function getProductsByCategory(
 
 export async function CreateCategory(name: string) {
   const response = await api.post("/categories", { name });
+  return response.data;
+}
+
+export async function createOrder(orderData: OrderData) {
+  const response = await api.post("/orders", orderData);
   return response.data;
 }
