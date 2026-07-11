@@ -1,10 +1,13 @@
 "use client";
 
 import { useCartStore } from "@/store/cartStore";
+import { useState } from "react";
+import OrderModal from "@/components/OrderModal";
 import Link from "next/link";
 
 export default function CartPage() {
   const items = useCartStore((state) => state.items);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
@@ -60,6 +63,17 @@ export default function CartPage() {
         <span className="text-lg font-semibold">Итого:</span>
         <span className="text-lg font-semibold">{totalPrice} ₽</span>
       </div>
+
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="w-full bg-orange-500 hover:bg-orange-600
+             text-white rounded-lg py-3 mt-4
+             cursor-pointer font-medium"
+      >
+        Оформить заказ
+      </button>
+
+      <OrderModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }

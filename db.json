@@ -1,12 +1,26 @@
 {
   "categories": [
-    { "id": "1", "name": "Пиццы" },
-    { "id": "2", "name": "Напитки" },
-    { "id": "3", "name": "Десерты" },
-    { "id": "4", "name": "Выпечки" },
-    { "id": "5", "name": "Мороженное" }
+    {
+      "id": "1",
+      "name": "Пиццы"
+    },
+    {
+      "id": "2",
+      "name": "Напитки"
+    },
+    {
+      "id": "3",
+      "name": "Десерты"
+    },
+    {
+      "id": "4",
+      "name": "Выпечки"
+    },
+    {
+      "id": "5",
+      "name": "Мороженное"
+    }
   ],
-
   "products": [
     {
       "id": "1",
@@ -22,7 +36,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "1"
     },
-
     {
       "id": "3",
       "name": "Кока-кола",
@@ -30,7 +43,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "2"
     },
-
     {
       "id": "5",
       "name": "Салам-кола",
@@ -38,7 +50,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "2"
     },
-
     {
       "id": "7",
       "name": "Фанта",
@@ -46,7 +57,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "2"
     },
-
     {
       "id": "4",
       "name": "Тирамису",
@@ -54,7 +64,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "3"
     },
-
     {
       "id": "6",
       "name": "Самса",
@@ -62,7 +71,6 @@
       "image": "/pizza-placeholder.jpg",
       "category": "4"
     },
-
     {
       "id": "8",
       "name": "Пломбир",
@@ -71,5 +79,84 @@
       "category": "5"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "name": "jdjvadvjadjnv'",
+      "phone": "jdjvadvjadjnv'3",
+      "address": "a;dlmv",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "name": "Маргарита",
+            "price": 350,
+            "image": "/pizza-placeholder.jpg",
+            "category": "1"
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 350,
+      "id": "1CXPaK-Wtsw"
+    },
+    {
+      "name": "Zokirjon",
+      "phone": "+998905003344",
+      "address": "Бухара",
+      "items": [
+        {
+          "product": {
+            "id": "2",
+            "name": "Пепперони",
+            "price": 420,
+            "image": "/pizza-placeholder.jpg",
+            "category": "1"
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 420,
+      "id": "08EbnaJhTF8"
+    },
+    {
+      "name": "Zkirjon ",
+      "phone": "+998905101122",
+      "address": "Buxara",
+      "items": [
+        {
+          "product": {
+            "id": "2",
+            "name": "Пепперони",
+            "price": 420,
+            "image": "/pizza-placeholder.jpg",
+            "category": "1"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "1",
+            "name": "Маргарита",
+            "price": 350,
+            "image": "/pizza-placeholder.jpg",
+            "category": "1"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "3",
+            "name": "Кока-кола",
+            "price": 120,
+            "image": "/pizza-placeholder.jpg",
+            "category": "2"
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 890,
+      "id": "fQdni1ae9vQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

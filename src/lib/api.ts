@@ -24,7 +24,7 @@ export async function getProductsByCategory(
   return response.data;
 }
 
-export async function CreateCategory(name: string) {
+export async function createCategory(name: string) {
   const response = await api.post("/categories", { name });
   return response.data;
 }
