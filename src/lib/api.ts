@@ -33,3 +33,13 @@ export async function createOrder(orderData: OrderData) {
   const response = await api.post("/orders", orderData);
   return response.data;
 }
+
+export async function updateCategory(id: string, name: string) {
+  const response = await api.put(`/categories/${id}`, { name });
+  return response.data;
+}
+
+export async function deleteCategory(id: string) {
+  const response = await api.delete(`/categories/${id}`);
+  return response.data;
+}
