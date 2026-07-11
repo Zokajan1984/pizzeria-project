@@ -60,7 +60,7 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
     >
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-3 mx-auto border-1 border-gray-400 rounded-2xl bg-white p-16"
+        className="flex flex-col gap-3 mx-auto border border-gray-400 rounded-2xl bg-white p-16"
       >
         <h3 className="text-lg font-semibold mb-4">Оформление заказа</h3>
         <input
