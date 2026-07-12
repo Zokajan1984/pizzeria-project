@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { Category, Product } from "@/types";
-import { getCategories, getProducts } from "@/lib/api";
 import PizzaCard from "@/components/PizzaCard";
 import { useCartStore } from "@/store/cartStore";
+
+import localDb from "../../db.json";
 
 export default function ProductsCatalog() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -32,24 +33,22 @@ export default function ProductsCatalog() {
       price: safePrice,
     };
 
-    console.log(
-      "Добавляем продукт в Zustand корзину через addItem:",
-      customizedProduct,
-    );
-
     if (addItem) {
       addItem(customizedProduct);
     }
   };
 
   useEffect(() => {
-    Promise.all([getCategories(), getProducts()])
-      .then(([catData, prodData]) => {
-        setCategories(catData || []);
-        setProducts(prodData || []);
-      })
-      .catch((err) => console.error("Ошибка загрузки каталога:", err))
-      .finally(() => setIsLoading(false));
+    try {
+      if (localDb) {
+        setCategories((localDb.categories || []) as Category[]);
+        setProducts((localDb.products || []) as Product[]);
+      }
+    } catch (err) {
+      console.error("Ошибка чтения локальной базы данных:", err);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   const scrollToMenu = () => {
@@ -98,7 +97,7 @@ export default function ProductsCatalog() {
             <span className="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               🍕 Самая быстрая доставка в городе
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-zinc-990 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-black text-zinc-900 leading-tight">
               Горячая пицца <br />
               <span className="text-orange-500">за 30 минут</span>
             </h1>
@@ -113,11 +112,9 @@ export default function ProductsCatalog() {
               Выбрать пиццу 👇
             </button>
           </div>
+
           <div className="flex justify-center">
-            <div
-              className="relative w-72 h-96 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-orange-200/50 shadow-2xl"
-              style={{ animation: "spin 40s linear infinite" }}
-            >
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-orange-200/60 shadow-2xl bg-white">
               <img
                 src="pizza.file.jpg"
                 alt="Горячая пицца"
