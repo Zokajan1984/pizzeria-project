@@ -87,6 +87,14 @@
       "category": "Фрукты",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiobM8rpm01jmpU1z4DxsnhlecL1jIvzHq-DF8rRgDpnyx826fStQLAgm9&s=10",
       "description": "Полезные витамины"
+    },
+    {
+      "id": "5CRvo5z4eHU",
+      "name": "Чизкейк",
+      "price": 230,
+      "category": "Десерты",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ptucnx3aeG8An-LASFuURibJzE3h5bLN7Tm7zcWN99NvVPDxpikaQes&s=10",
+      "description": "Воздушный Чизкейк"
     }
   ],
   "orders": [
@@ -207,6 +215,46 @@
         }
       ],
       "totalPrice": 1830
+    },
+    {
+      "id": "ltOQbJIRMas",
+      "name": "Nigora",
+      "phone": "+998905101122",
+      "address": "g. Buxara ul. Goziyon 14",
+      "items": [
+        {
+          "product": {
+            "id": "2-Тонкое-40см",
+            "name": "Пепперони (Тонкое, 40 см)",
+            "price": 570,
+            "image": "https://ritsacafe.ru/wp-content/uploads/2022/06/img_0222-scaled.jpg",
+            "category": "1"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "1-Традиционное-40см",
+            "name": "Маргарита (Традиционное, 40 см)",
+            "price": 500,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiqW-snI0pBRFHLU0TBUTsVF2Z9fwMX5CAnNAYID5CgxhVRbxLpoHt5go&s=10",
+            "category": "1"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "name": "Мясной пир (Тонкое, 30 см)",
+            "price": 390,
+            "category": "Пиццы",
+            "image": "https://www.edaedet.ru/upload/iblock/a9d/a9d5f549be553f9ed2ae9373bbfaa372.jpg",
+            "description": "Очень много мяса",
+            "id": "hrkqtYE1uOk-Тонкое-30см"
+          },
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 1850
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
