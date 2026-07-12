@@ -5,6 +5,7 @@ import { Category, Product } from "@/types";
 import PizzaCard from "@/components/PizzaCard";
 import { useCartStore } from "@/store/cartStore";
 
+// Импортируем локальную базу данных, гарантируя чтение структуры на Vercel
 import localDb from "../../db.json";
 
 export default function ProductsCatalog() {
@@ -114,9 +115,10 @@ export default function ProductsCatalog() {
           </div>
 
           <div className="flex justify-center">
+            {/* ИСПРАВЛЕНО: Вернули твою геометрию со скруглёнными углами (rounded-2xl) */}
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-orange-200/60 shadow-2xl bg-white">
               <img
-                src="pizza.file.jpg"
+                src="/pizza.file.jpg"
                 alt="Горячая пицца"
                 className="w-full h-full object-cover"
               />
