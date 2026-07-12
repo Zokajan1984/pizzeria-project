@@ -70,8 +70,14 @@ export default function AdminCategoriesPage() {
   }
 
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-4">Категории</h2>
+    /* 
+      ИСПРАВЛЕНО: 
+      w-full — 100% на телефонах
+      md:w-1/2 — ровно 50% ширины на больших экранах ПК
+      mx-auto — идеальное выравнивание по центру
+    */
+    <div className="w-full md:w-9/10 mx-auto border border-zinc-200 p-6 rounded-2xl bg-white shadow-xs">
+      <h2 className="text-xl font-bold text-zinc-800 mb-4">Категории</h2>
 
       <form onSubmit={handleCreate} className="flex gap-2 mb-6">
         <input
@@ -79,57 +85,53 @@ export default function AdminCategoriesPage() {
           placeholder="Название новой категории"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-          className="border rounded-lg px-3 py-2 flex-1"
+          className="border border-zinc-300 rounded-xl px-4 py-2 flex-1 focus:outline-hidden focus:border-zinc-800"
         />
         <button
           type="submit"
-          className="bg-black text-white px-4 py-2
-                     rounded-lg cursor-pointer"
+          className="bg-zinc-900 text-white px-5 py-2 font-medium rounded-xl cursor-pointer hover:bg-zinc-800 transition-colors"
         >
           Добавить
         </button>
       </form>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         {categories.map((category) => (
           <div
             key={category.id}
-            className="flex items-center justify-between
-                       border rounded-lg p-3"
+            className="flex items-center justify-between border border-zinc-100 rounded-xl p-4 bg-zinc-50/50"
           >
             {editingId === category.id ? (
               <input
                 type="text"
                 value={editingName}
                 onChange={(e) => setEditingName(e.target.value)}
-                className="border rounded-lg px-2 py-1 flex-1
-                           mr-2"
+                className="border border-zinc-300 rounded-lg px-3 py-1 flex-1 mr-3 bg-white"
               />
             ) : (
-              <span>{category.name}</span>
+              <span className="font-medium text-zinc-700">{category.name}</span>
             )}
 
-            <div className="flex gap-2">
+            {/* ИСПРАВЛЕНО: gap-4 и shrink-0 изолируют кнопки Изменить/Удалить от текста */}
+            <div className="flex items-center gap-4 ml-4 shrink-0">
               {editingId === category.id ? (
                 <button
                   onClick={() => handleUpdate(category.id)}
-                  className="text-green-600 cursor-pointer
-                             text-sm"
+                  className="text-emerald-600 font-bold cursor-pointer text-sm hover:underline"
                 >
                   Сохранить
                 </button>
               ) : (
                 <button
                   onClick={() => startEditing(category)}
-                  className="text-blue-600 cursor-pointer
-                             text-sm"
+                  className="text-blue-600 font-bold cursor-pointer text-sm hover:underline"
                 >
                   Изменить
                 </button>
               )}
               <button
                 onClick={() => handleDelete(category.id)}
-                className="text-red-600 cursor-pointer text-sm"
+                className="text-red-600 font-bold cursor-pointer text-sm hover:underline"
               >
                 Удалить
               </button>
